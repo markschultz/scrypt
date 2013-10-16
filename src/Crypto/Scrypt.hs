@@ -10,7 +10,7 @@
 module Crypto.Scrypt (
     -- * Parameters to the @scrypt@ function
     -- $params
-     ScryptParams, scryptParams, defaultParams
+     ScryptParams(..), scryptParams, defaultParams
     -- * Password Storage
     -- $password-storage
     , EncryptedPass(..), encryptPass, encryptPass', verifyPass, verifyPass'
@@ -64,6 +64,7 @@ instance Show ScryptParams where
         , "{ logN=", show logN
         , ", r="   , show r
         , ", p="   , show p
+        , ", buf="   , show bufLen
         , " }"
         ]
 
